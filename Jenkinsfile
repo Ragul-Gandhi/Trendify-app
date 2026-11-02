@@ -12,7 +12,7 @@ pipeline {
         AWS_DEFAULT_REGION = 'ap-south-1'
         CLUSTER_NAME    = 'ragul'
         K8S_NAMESPACE   = 'default'
-        K8S_MANIFEST    = 'K8s/Trend.yaml'   // Deployment + Service file in the repo
+        K8S_MANIFEST    = 'K8s/Trend.yml'   // Deployment + Service file in the repo
         DEPLOYMENT_NAME = 'trend-app-deploy'            // metadata.name in the Deployment
         CONTAINER_NAME  = 'project-2-app'            // container name inside the Deployment
         // Jenkins credential ID (AWS access uses the EC2 instance role EC2_EKS)
