@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: trend-app-service
+spec:
+  selector:
+    app: trend-app
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 80
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trend-app-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: trend-app
+  template:
+    metadata:
+      labels:
+        app: trend-app
+    spec:
+      containers:
+        - name: project-2-app
+          image: ragulgandhi/trend-app:latest
+          ports:
+            - containerPort: 80
+
